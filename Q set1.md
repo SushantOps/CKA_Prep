@@ -9,6 +9,15 @@ kubectl run admin-pod --image=busybox  --command sleep 3200 -dry-run=client -o y
 
 
 ## Q3. Create a new deployment called web-proj-268 with image nginx:1.16 and 1 replica. Next upgrade the deployment to version 1.17 using rolling upddate. Make sure that the version upgrade to recorded in the resource annotation.
+```
+kubectl create deployment web-proj-268 --image=nginx:1.16
+
+kubectl set image deployment web-proj-268 nginx=nginx:1.17 --recorded
+
+kubectl rollout history deployment web-proj-268 
+```
+
+
 
 ## Q4. 
 
